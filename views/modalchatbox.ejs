@@ -1,0 +1,144 @@
+ <!--Chat Box Modal starts here-->
+ <div class="modal-parent-chatbox">
+    <div class="modal-chatbox">
+        <h1 style="text-align: center;">Chat Box</h1>
+        <div class="container container-chatbox">
+          <div class="row row-1">
+            <div class="column col-1">
+              <button><span>Write Message</span><i class='fas fa-edit'></i></button>
+            </div>
+            <div class="column col-2">
+              <button><span>Audio Call</span><i class='fas fa-phone-alt'></i></button>
+            </div>
+            <div class="column col-3">
+              <button><span>Video Call</span> <i class='fas fa-video'></i></button>
+            </div>
+            <div class="column col-4">
+              <button><span>Contacts</span><i class="fa fa-address-book"></i></button>                       
+            </div>
+            <div class="column col-5">
+              <button><span>Settings</span><i class="fa fa-gear"></i></button>
+            </div>
+          </div>
+          <div class="row row-2">
+            <form>
+              <input type="search" placeholder="Search here....."><button><span>Search</span><i class="fa fa-search"></i></button>
+            </form>
+          </div>
+
+          <div class="row row-3">
+            <div class="column col-messanger-other">
+              other messanger messages in chat box
+            </div>
+            <div class="column col-messanger-me">
+              my messages in chat box
+            </div>
+          </div>
+
+          <div class="row row-4">
+            <div class="column col-attach-file-photo">
+              <label>Attach File/Photo</label><input name="attachfile" type="file" />
+            </div>
+            <div class="column col-attach-video">
+              <label>Attach Video</label><input name="attachvideo" type="file" />
+            </div>
+            <div class="column col-attach-sticker">
+              <label>Sticker</label><input name="attachsticker" type="file" />
+            </div>
+            <div class="column col-attach-gif">
+              <label>Gif</label><input name="attachgif" type="file" />
+            </div>                      
+          </div><!--row 4 ends here-->
+
+          <div class="row row-5">   
+            <form> 
+              <input name="" type="text" placeholder="Write Message here....."/>
+              <button><span>Send</span> <i class="fa fa-send"></i></button>                
+            </form>                                                                                    
+          </div><!--row - 5 ends here-->
+        </div><!--container-chatbox ends-->
+        
+        
+        
+        <span class="X-agreement" onclick="closeChatBoxModal()">&times;</span>
+    </div>
+   </div>
+  <!--Chat Box Ends Modal ends here-->
+  <!--Chat Box Modal for customers and freelancers using alladvertisement section starts here-->
+  <div class="modal-parent-chatbox">
+    <div class="modal-chatbox">
+        <h1 style="text-align: center;">Chat Box</h1>
+        <div class="container container-chatbox">
+          <div class="row row-1">
+            <div class="column col-1">
+              <button><span>Write Message</span><i class='fas fa-edit'></i></button>
+            </div>
+            <div class="column col-2">
+              <button><span>Audio Call</span><i class='fas fa-phone-alt'></i></button>
+            </div>
+            <div class="column col-3">
+              <button><span>Video Call</span> <i class='fas fa-video'></i></button>
+            </div>
+            <div class="column col-4">
+              <button><span>Contacts</span><i class="fa fa-address-book"></i></button>                       
+            </div>
+            <div class="column col-5">
+              <button><span>Settings</span><i class="fa fa-gear"></i></button>
+            </div>
+          </div>
+          <div class="row row-2">
+            <form>
+              <input type="search" placeholder="Search here....."><button><span>Search</span><i class="fa fa-search"></i></button>
+            </form>
+          </div>
+
+          <div class="row row-3">
+            <div class="column col-messanger-other">
+              other messanger messages in chat box
+            </div>
+            <div class="column col-messanger-me">
+              my messages in chat box
+            </div>
+          </div>
+
+          <div class="row row-4">
+            <div class="column col-attach-file-photo">
+              <label>Attach File/Photo</label><input name="attachfile" type="file" />
+            </div>
+            <div class="column col-attach-video">
+              <label>Attach Video</label><input name="attachvideo" type="file" />
+            </div>
+            <div class="column col-attach-sticker">
+              <label>Sticker</label><input name="attachsticker" type="file" />
+            </div>
+            <div class="column col-attach-gif">
+              <label>Gif</label><input name="attachgif" type="file" />
+            </div>                      
+          </div><!--row 4 ends here-->
+
+          <div class="row row-5">   
+            <form action="/sendchatmessage"> 
+                <% if(freelanceAdvertisementData.length > 0){ %>        
+         
+                    <% var row = ''; %>  
+                    <% for(let i = 0; i < freelanceAdvertisementData.length; i++) { %>  
+                           
+                          <% row = freelanceAdvertisementData[i] %> 
+      
+              <input name="uname" type="hidden" value=""/> 
+              <input name="advertisementid" type="hidden" value="<%= row._id %>"/>
+              <input name="writemessage" type="text" placeholder="Write Message here....."/>
+              <button type="submit"><span>Send</span> <i class="fa fa-send"></i></button>    
+              <% } %>
+              <% }  %>            
+            </form>                                                                                    
+          </div><!--row - 5 ends here-->
+        </div><!--container-chatbox ends-->
+        
+        
+        
+        <span class="X-agreement" onclick="closeChatBoxModal()">&times;</span>
+    </div>
+   </div>
+  <!--Chat Box modal for customers and freelancers using alladvertisement section Ends Modal ends here-->
+

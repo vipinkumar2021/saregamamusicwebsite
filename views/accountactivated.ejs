@@ -1,0 +1,35 @@
+<%- include('header') %>
+
+<div class="item item3 main">
+    <div class="container admin signup-verification">
+        <h1>Account Activation Message</h1>
+        <h1><% if(msg != ''){ %>
+            <%= msg %>
+          <% } %>
+        </h1>
+        <br/>     
+        
+        
+        <br/>
+                    
+        <button id="send-message" onclick="openSignInModal()">Log in</button> 
+       
+    </div>
+    
+      
+
+
+  
+    
+ 
+
+</div>
+<%- include('modal') %>
+<%- include('modaladmin') %>
+<%- include('modalcareer') %>
+<%- include('modalemployees') %>  
+<%- include('footer') %>
+
+
+
+

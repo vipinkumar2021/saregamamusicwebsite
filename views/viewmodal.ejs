@@ -1,0 +1,175 @@
+<!--View Website Features List in Modal starts here-->
+<div class="modal-parent-viewwebsitefeatureslist" id="signin">
+    <div class="modal-viewwebsitefeatureslist">          
+                
+            
+        <% if(currentAccountUserData != '' || currentAccountUserData != null) { %> 
+                <h1 style="text-align: center;">
+                    Website Features List for Username:<%= currentAccountUserData.Username %>
+                </h1>
+            
+        <ul>           
+          <li class="this-item-price-element"><%= currentAccountUserData.UserSignUpSignIn %> </li>
+          <li class="this-item-price-element"><%= currentAccountUserData.EmployeesSignUpSignIn %> </li>
+          <li class="this-item-price-element"><%= currentAccountUserData.AdminSignUpSignIn %> </li>
+          <li class="this-item-price-element"><%= currentAccountUserData.CompanyLogo  %> </li>
+          <li class="this-item-price-element"><%= currentAccountUserData.ContentManagement  %></li>    
+          <li class="this-item-price-element"><%= currentAccountUserData.DocumentManagement %></li>          
+          <li class="this-item-price-element"><%= currentAccountUserData.EventCalender  %> </li>
+          <li class="this-item-price-element"><%= currentAccountUserData.EmailNewsLetterSubscription  %> </li>
+          <li class="this-item-price-element"><%= currentAccountUserData.BusinessDirectory  %> </li>
+          <li class="this-item-price-element"><%= currentAccountUserData.OnlinePaymentMethod  %> </li>
+          <li class="this-item-price-element"><%= currentAccountUserData.SocialMediaIntegration  %> </li>
+          <li id="total-price-for-selected-features">
+
+          </li>
+          
+              
+              <script>  
+              /*          
+                    var itemPriceElements = document.getElementsByClassName('this-item-price-element');
+                    var listOfAllSelectedFeaturesPrices = '';
+                   
+                    for(i = 0; i < itemPriceElements.length; i++) {                 
+                     listOfAllSelectedFeaturesPrices = listOfAllSelectedFeaturesPrices + itemPriceElements[i].innerHTML.slice(-6); 
+                    /*
+                    var listOfAllSelectedFeaturesPricesArray = [
+                        itemPriceElements[0].innerHTML.slice(-6),
+                        itemPriceElements[1].innerHTML.slice(-6),
+                        itemPriceElements[2].innerHTML.slice(-6),
+                        itemPriceElements[3].innerHTML.slice(-6),
+                        itemPriceElements[4].innerHTML.slice(-6),
+                        itemPriceElements[5].innerHTML.slice(-6),
+                        itemPriceElements[6].innerHTML.slice(-6),
+                        itemPriceElements[7].innerHTML.slice(-6),
+                        itemPriceElements[8].innerHTML.slice(-6),
+                        itemPriceElements[9].innerHTML.slice(-6),
+                        itemPriceElements[10].innerHTML.slice(-6)                        
+                    ]
+                    */
+                    /*
+                    const listOfFirstSelectedFeaturePrice = itemPriceElements[0].innerHTML.slice(-6)
+                    const listOfSecondSelectedFeaturePrice = itemPriceElements[1].innerHTML.slice(-6)
+                    const listOfThirdSelectedFeaturePrice = itemPriceElements[2].innerHTML.slice(-6)
+                    const listOfFourthSelectedFeaturePrice = itemPriceElements[3].innerHTML.slice(-6)
+                    const listOfFifthSelectedFeaturePrice = itemPriceElements[4].innerHTML.slice(-6)
+                    const listOfSixthSelectedFeaturePrice = itemPriceElements[5].innerHTML.slice(-6)
+                    const listOfSeventhSelectedFeaturePrice = itemPriceElements[6].innerHTML.slice(-6)
+                    const listOfEightthSelectedFeaturePrice = itemPriceElements[7].innerHTML.slice(-6)
+                    const listOfNinethSelectedFeaturePrice = itemPriceElements[8].innerHTML.slice(-6)
+                    const listOfTenthSelectedFeaturePrice = itemPriceElements[9].innerHTML.slice(-6)
+                    const listOfEleventhSelectedFeaturePrice = itemPriceElements[10].innerHTML.slice(-6)
+                    
+                    const arrayOfAllSelectedFeaturesPrices = [
+                    parseInt(listOfFirstSelectedFeaturePrice),
+                    parseInt(listOfSecondSelectedFeaturePrice),
+                    parseInt(listOfThirdSelectedFeaturePrice),
+                    parseInt(listOfFourthSelectedFeaturePrice),
+                    parseInt(listOfFifthSelectedFeaturePrice),
+                    parseInt(listOfSixthSelectedFeaturePrice),
+                    parseInt(listOfSeventhSelectedFeaturePrice),
+                    parseInt(listOfEightthSelectedFeaturePrice),
+                    parseInt(listOfNinethSelectedFeaturePrice),
+                    parseInt(listOfTenthSelectedFeaturePrice),
+                    parseInt(listOfEleventhSelectedFeaturePrice)
+
+                    ]
+                    
+                    /*
+                    let totalOfArrayOfAllSelectedFeaturesPrices = 0;
+
+                    for(i = 0; i < arrayOfAllSelectedFeaturesPrices.length; i++)
+                    if()
+*/
+                    /*
+                    for(let n of arrayOfAllSelectedFeaturesPrices)
+                    totalOfArrayOfAllSelectedFeaturesPrices += n; 
+                    */
+                    // this didn't work
+                    /*
+                    const totalOfArrayOfAllSelectedFeaturesPrices = arrayOfAllSelectedFeaturesPrices.reduce((accumulator, currentValue) => {
+                        
+                        var total = accumulator + currentValue;
+                        if(isNaN(total)) {
+                        return parseInt(total)
+                        }
+                    }, 0);
+                    
+                   /* var totalOfArrayOfAllSelectedFeaturesPrices = arrayOfAllSelectedFeaturesPrices[0] +
+                    arrayOfAllSelectedFeaturesPrices[1] +
+                    arrayOfAllSelectedFeaturesPrices[2] +
+                    arrayOfAllSelectedFeaturesPrices[3] +
+                    arrayOfAllSelectedFeaturesPrices[4] +
+                    arrayOfAllSelectedFeaturesPrices[5] +
+                    arrayOfAllSelectedFeaturesPrices[6] +
+                    arrayOfAllSelectedFeaturesPrices[7] +
+                    arrayOfAllSelectedFeaturesPrices[8] +
+                    arrayOfAllSelectedFeaturesPrices[9] +
+                    arrayOfAllSelectedFeaturesPrices[10]
+                    
+                    */
+                 /*   document.getElementById('total-price-for-selected-features').innerHTML = totalOfArrayOfAllSelectedFeaturesPrices //listOfAllSelectedFeaturesPrices;
+
+                }
+                //document.getElementById('total-price-for-selected-features').innerHTML = totalOfListOfAllSelectedFeaturesPricesArray //listOfAllSelectedFeaturesPrices;
+
+                
+                
+                
+                                     
+                
+                    
+                 
+
+                  /*
+                  function showTotalPriceForSelectedFeatures() {
+
+                    var itemPriceElements = document.getElementsByClassName('this-item-price-element');
+                    for(i = 0; i < itemPriceElements.length; i++) {
+                    var itemPriceElement = itemPriceElements[i]
+                    var itemPrice = parseFloat(itemPriceElement.value) ;
+                    var totalPrice = itemPrice + itemPrice;    
+                    }
+                    document.getElementById('total-price-for-selected-features').innerHTML = 'Total price for seleceted features: ' + totalPrice
+                    }*/
+            
+              </script>
+        </ul>
+    <% }  %> 
+
+        <span class="X-viewwebsitefeatureslist" onclick="closeViewWebsiteFeaturesListModal()">&times;</span>
+    </div>
+  </div>
+  <!--View Website Feature List in Modal ends here-->
+
+
+  <!--View Website Content Modal ends here-->
+             <!--View Website Content in Modal starts here-->
+             <div class="modal-parent-viewwebsitecontent" id="signin">
+                <div class="modal-viewwebsitecontent">
+                    
+                    
+
+                    <% if(currentAccountUserData != '' || currentAccountUserData != null) { %> 
+                        <h1 style="text-align: center;">
+                            Website Content for Username:<%= currentAccountUserData.Username %>
+                        </h1>
+                    
+                <ul>           
+                  <li><p><b>Company Name:</b> <%= currentAccountUserData.CompanyName  %></p></li>
+                  <li><p><b>Company Contact Number:</b> <%= currentAccountUserData.CompanyContactNumber  %></p> </li>
+                  <li><p><b>Company Email:</b> <%= currentAccountUserData.CompanyEmail  %></p> </li>
+                  <li><p><b>Company Address:</b> <%= currentAccountUserData.CompanyAddress  %></p></li>    
+                  <li><p><b>Company Services:</b> <%= currentAccountUserData.CompanyServices %></p></li>          
+                  <li><p><b>Company's Additional Information:</b> <%= currentAccountUserData.CompanyAdditionalInformation  %></p> </li>
+                  <li><p><b>Company Logo File:</b> <%= currentAccountUserData.CompanyLogoFile  %></p> </li>
+                  <li><p><b>Company Files:</b> <%= currentAccountUserData.CompanyFiles  %></p> </li>
+                  <li><p><b>Company Photos:</b> <%= currentAccountUserData.CompanyPhotos  %></p> </li>
+                </ul>
+            <% }  %> 
+
+                    <span class="X-viewwebsitecontent" onclick="closeViewWebsiteContentModal()">&times;</span>
+                </div>
+               </div>
+  <!--View Website Content in Modal ends here-->
+  
